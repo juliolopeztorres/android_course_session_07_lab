@@ -50,8 +50,8 @@ public class PersonAdapter extends BaseAdapter {
         Person person = this.personList.get(i);
         Country personCountry = person.getCountry();
 
-        personViewHolder.getTextViewName().setText(person.getName());
-        personViewHolder.getTextViewCountry().setText(personCountry.getName());
+        personViewHolder.getTextViewName().setText(this.capitalizeFirstChar(person.getName()));
+        personViewHolder.getTextViewCountry().setText(this.capitalizeFirstChar(personCountry.getName()));
         personCountry.getFlagUrl(this.context).into(personViewHolder.getImageViewFlag());
 
         return view;
@@ -70,7 +70,10 @@ public class PersonAdapter extends BaseAdapter {
         return (new PersonViewHolder())
             .setImageViewFlag((ImageView) view.findViewById(R.id.imageViewFlag))
             .setTextViewName((TextView) view.findViewById(R.id.textViewName))
-            .setTextViewCountry((TextView) view.findViewById(R.id.textViewCountry))
-            ;
+            .setTextViewCountry((TextView) view.findViewById(R.id.textViewCountry));
+    }
+
+    private String capitalizeFirstChar(String string) {
+        return string.substring(0, 1).toUpperCase() + string.substring(1, string.length());
     }
 }

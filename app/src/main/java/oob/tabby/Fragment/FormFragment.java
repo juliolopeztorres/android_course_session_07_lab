@@ -12,8 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import oob.tabby.Exception.MustImplementFormFragmentEventsInterfaceException;
+import oob.tabby.Interface.FormFragmentEvents;
 import oob.tabby.Model.Country;
 import oob.tabby.Model.Person;
 import oob.tabby.R;
@@ -88,9 +88,5 @@ public class FormFragment extends Fragment {
     private void clearInputData() {
         this.editTextPersonName.setText("");
         this.spinnerPersonCountry.setSelection(0);
-    }
-
-    public interface FormFragmentEvents {
-        void onCreatePerson(Person person);
     }
 }
