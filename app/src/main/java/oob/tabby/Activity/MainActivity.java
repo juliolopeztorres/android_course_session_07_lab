@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import oob.tabby.Adapter.PageAdapter;
-import oob.tabby.Fragment.FormFragment;
 import oob.tabby.Fragment.ListFragment;
+import oob.tabby.Interface.FormFragmentEvents;
 import oob.tabby.Model.Person;
 import oob.tabby.R;
 
-public class MainActivity extends AppCompatActivity implements FormFragment.FormFragmentEvents {
+public class MainActivity extends AppCompatActivity implements FormFragmentEvents {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
